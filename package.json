@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-dimension",
-  "description": "Gatsby Starter - Dimension by HTML5 UP",
+  "name": "inanis-umbra",
+  "description": "Inanis Umbra - A Novel of Madness ",
   "version": "1.0.0",
-  "author": "Hunter Chang",
+  "author": "Xeiko",
   "dependencies": {
     "gatsby": "^1.9.235",
     "gatsby-link": "^1.6.39",
@@ -18,17 +18,16 @@
     "gatsby-transformer-sharp": "^1.6.22",
     "lodash": "^4.17.4"
   },
-  "homepage": "https://github.com/ChangoMan/gatsby-starter-dimension",
-  "keywords": [
-    "gatsby"
-  ],
+ 
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ChangoMan/gatsby-starter-dimension.git"
+    "url": "https://github.com/like-a-fox/InanisUmbra"
   },
   "scripts": {
+    "start": "serve public/",
+    "now": "now --public",
     "dev": "gatsby develop",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",
