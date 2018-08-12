@@ -9,7 +9,7 @@
 	form {
 		$gutter: _size(element-margin) * 0.75;
 
-		margin: 0 0 (_size(element-margin) * 1.25) 0;
+		margin: 0 0 1.5rem 0;
 
 		.field {
 			margin: 0 0 ($gutter * 1) 0;
@@ -30,11 +30,13 @@
 		}
 
 		@include breakpoint(small) {
+			margin-bottom: 0;
 			.field {
 				margin: 0 0 ($gutter * 0.75) 0;
 
 				&.half {
 					padding: 0 0 0 ($gutter * 0.75 * 0.5);
+					
 
 					&.first {
 						padding: 0 ($gutter * 0.75 * 0.5) 0 0;
@@ -64,9 +66,9 @@
 
 	label {
 		color: _palette(fg-bold);
+		font-weight: 600;
 		display: block;
-		font-size: 16px;
-		font-weight: _font(weight);
+		font-size: 100%;
 		letter-spacing: _font(letter-spacing);
 		line-height: 1.5;
 		margin: 0 0 (_size(element-margin) * 0.5) 0;
@@ -85,10 +87,13 @@
 			'box-shadow #{_duration(transition)} ease-in-out',
 			'background-color #{_duration(transition)} ease-in-out'
 		));
-		background: transparent;
+		background: transparentize(_palette(bg), 0.35);
 		border-radius: _size(border-radius);
 		border: solid _size(border-width) _palette(border);
 		color: inherit;
+		font-size: 105%;
+		color: _palette(fg-bold);
+		letter-spacing: .05rem;
 		display: block;
 		outline: 0;
 		padding: 0 1rem;
@@ -228,26 +233,26 @@
 	}
 
 	::-webkit-input-placeholder {
-		color: _palette(fg-light) !important;
+		color: _palette(fg-bold) !important;
 		opacity: 1.0;
 	}
 
 	:-moz-placeholder {
-		color: _palette(fg-light) !important;
+		color: _palette(fg-bold) !important;
 		opacity: 1.0;
 	}
 
 	::-moz-placeholder {
-		color: _palette(fg-light) !important;
+		color: _palette(fg-bold) !important;
 		opacity: 1.0;
 	}
 
 	:-ms-input-placeholder {
-		color: _palette(fg-light) !important;
+		color: _palette(fg-bold) !important;
 		opacity: 1.0;
 	}
 
 	.formerize-placeholder {
-		color: _palette(fg-light) !important;
+		color: _palette(fg-bold) !important;
 		opacity: 1.0;
 	}

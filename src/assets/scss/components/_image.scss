@@ -64,27 +64,30 @@
 
 		&.main {
 			display: block;
-			margin: (_size(element-margin) * 1.25) 0;
-			width: 100%;
+			margin: 0 auto (_size(element-margin) * 1) auto;
+			width: 57%;
+			border-radius: 50%;
+			float: right;
+			overflow: hidden;
+			box-sizing: border-box;
+			border: solid .3rem transparentize(_palette(border), 0.25);
 
 			img {
-				opacity: .5;
-				border-radius: 50%;
+				opacity: .9;
 				width: 100%;
-				@include vendor('filter', 'invert(100%)');
-				@include vendor('filter', 'hue-rotate(180)');
+				@include vendor('filter', 'grayscale(30%)');
 			}
 		}
 
 		@include breakpoint(small) {
 			&.main {
-				margin: (_size(element-margin) * 1) 0;
+				margin: (_size(element-margin) * 1) auto;
 			}
 		}
 
 		@include breakpoint(xsmall) {
 			&.main {
-				margin: (_size(element-margin) * 0.75) 0;
+				margin: (_size(element-margin) * 0.75) auto;
 			}
 		}
 	}

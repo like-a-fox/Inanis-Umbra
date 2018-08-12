@@ -57,11 +57,12 @@
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: 80%;
-
+			background-color: transparentize(_palette(bg), 0.4);
 			
 		}
 
 		.content {
+			background-color: transparentize(_palette(bg), 0.4);
 			border-style: solid;
 			border-color: _palette(border);
 			border-top-width: _size(border-width);
@@ -93,6 +94,8 @@
 		}
 
 		nav {
+			background-color: transparentize(_palette(bg), 0.35);
+			border-radius: _size(border-radius);
 			ul {
 				@include vendor('display', 'flex');
 				margin-bottom: 0;
@@ -111,7 +114,8 @@
 
 					a {
 						display: block;
-						min-width: 7.5rem;
+						font-weight: 600;
+						min-width: 8.5rem;
 						height: 2.75rem;
 						line-height: 2.75rem;
 						padding: 0 1.25rem 0 (1.25rem + _font(letter-spacing));
@@ -122,6 +126,8 @@
 
 						&:hover {
 							background-color: _palette(border-bg);
+							font-weight: 800;
+							letter-spacing: .3em;
 						}
 
 						&:active {

@@ -17,6 +17,7 @@ class Template extends React.Component {
       loading: 'is-loading'
     }
     this.handleOpenArticle = this.handleOpenArticle.bind(this)
+    this.handleChangeArticle = this.handleChangeArticle.bind(this)
     this.handleCloseArticle = this.handleCloseArticle.bind(this)
   }
 
@@ -51,6 +52,11 @@ class Template extends React.Component {
       })
     }, 350)
 
+  }
+  handleChangeArticle(article) {
+    this.setState({
+      article
+    })
   }
 
   handleCloseArticle() {
@@ -91,6 +97,7 @@ class Template extends React.Component {
           <Main
             isArticleVisible={this.state.isArticleVisible}
             timeout={this.state.timeout}
+            changeArticle={this.handleChangeArticle} 
             articleTimeout={this.state.articleTimeout}
             article={this.state.article}
             onCloseArticle={this.handleCloseArticle}

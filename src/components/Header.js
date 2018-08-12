@@ -8,7 +8,7 @@ const Header = (props) => (
         <div className="content">
             <div className="inner">
                 <h1>Inanis Umbra</h1>
-                <p>'A Failurs Life' written by Derek Musser</p>
+                <p>'A Failure's Life' written by Derek Musser</p>
             </div>
         </div>
         <nav>

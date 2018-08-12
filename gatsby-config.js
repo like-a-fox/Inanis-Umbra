@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Inanis Umbra - A Novel of Madness",
     author: "Xeiko",
-    description: "The Official Website For A Failures Life by Derek Musser"
+    description: "The Official Website For A Failure's Life by Derek Musser"
   },
   pathPrefix: '/',
   plugins: [

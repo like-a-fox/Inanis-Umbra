@@ -24,14 +24,20 @@
 				'opacity #{_duration(article)} ease-in-out',
 				'transform #{_duration(article)} ease-in-out'
 			));
-			@include padding(2.5rem, 2.5rem, (2rem, 0, 1rem, 0));
+			padding: 2.5rem;
+			box-sizing: border-box;
 			position: relative;
 			width: 40rem;
 			max-width: 100%;
-			background-color: transparentize(_palette(bg), 0.15);
+			background-color: transparentize(_palette(bg), 0.75);
 			border-radius: _size(border-radius);
 			opacity: 0;
 
+			.poem {
+				p {
+					text-align: center;
+				}
+			}
 			&.timeout {
 				display: none;
 			}
@@ -43,6 +49,18 @@
 
 			&.active {
 				display: block !important;
+			}
+			h2 {
+				background-color: transparentize(_palette(bg), 0.25);
+				padding: .25rem .5rem;
+				border-bottom: solid 4px _palette(border);
+				float: left;
+			}
+			p {
+				background-color: transparentize(_palette(bg), 0.25);
+				padding: 1rem;
+				clear: both;
+				border-bottom: solid .2rem transparentize(_palette(border), .1);
 			}
 
 			.close {
@@ -86,10 +104,139 @@
 				}
 			}
 
-		}
+			nav {
+				margin: 1rem 0;
+				background-color: transparentize(_palette(bg), 0.25);
+				border-radius: _size(border-radius);
 
+				ul {
+					@include vendor('display', 'flex');
+					flex-flow: row;
+					justify-content: space-between;
+					margin: 0;
+					width: 100%;
+					list-style: none;
+					padding-left: 0;
+					border: solid _size(border-width) _palette(border);
+					border-radius: _size(border-radius);
+	
+					li {
+						float:left;
+						padding:0;
+						padding-left: 0;
+						border-left: solid _size(border-width) _palette(border);
+						width: 100%;
+						
+						&:first-child {
+							border-left: 0;
+						}
+	
+						a {
+							display: block;
+							text-align: center;
+							width: 100%;
+							height: 2.75rem;
+							line-height: 2.75rem;
+							padding: 0 1.25rem 0 (1.25rem + _font(letter-spacing));
+							text-transform: uppercase;
+							letter-spacing: _font(letter-spacing);
+							font-size: 0.8rem;
+							border-bottom: 0;
+
+							&.next {
+								padding-right: 4.5em;
+								position: relative;
+								&:before,
+								&:after {
+									@include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');
+									background-position: center right;
+									background-repeat: no-repeat;
+									background-size: 36px 24px;
+									content: '';
+									display: block;
+									height: 100%;
+									position: absolute;
+									right: 1.5em;
+									top: 0;
+									width: 36px;
+								}
+								&:before {
+									background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36px" height="24px" viewBox="0 0 36 24" zoomAndPan="disable"><style>line { stroke: #{_palette(fg-bold)}; stroke-width: 2px; }</style><line x1="0" y1="12" x2="34" y2="12" /><line x1="25" y1="4" x2="34" y2="12.5" /><line x1="25" y1="20" x2="34" y2="11.5" /></svg>');
+								}
+								&:after {
+									background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36px" height="24px" viewBox="0 0 36 24" zoomAndPan="disable"><style>line { stroke: #{_palette(highlight)}; stroke-width: 2px; }</style><line x1="0" y1="12" x2="34" y2="12" /><line x1="25" y1="4" x2="34" y2="12.5" /><line x1="25" y1="20" x2="34" y2="11.5" /></svg>');
+									opacity: 0;
+									z-index: 1;
+								}
+							}
+							&.back {
+								padding-left: 4.5em;
+								position: relative;
+								&:before,
+								&:after {
+									@include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');
+									background-position: center left;
+									background-repeat: no-repeat;
+									background-size: 36px 24px;
+									content: '';
+									display: block;
+									height: 100%;
+									position: absolute;
+									left: 1.5em;
+									top: 0;
+									width: 36px;
+								}
+								&:before {
+									background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36px" height="24px" viewBox="0 0 36 24" zoomAndPan="disable"><style>line { stroke: #{_palette(fg-bold)}; stroke-width: 2px; }</style><line x1="0" y1="12" x2="34" y2="12" /><line x1="9" y1="4" x2="0" y2="12.5" /><line x1="9" y1="20" x2="0" y2="11.5" /></svg>');
+								}
+								&:after {
+									background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36px" height="24px" viewBox="0 0 36 24" zoomAndPan="disable"><style>line { stroke: #{_palette(highlight)}; stroke-width: 2px; }</style><line x1="0" y1="12" x2="34" y2="12" /><line x1="9" y1="4" x2="0" y2="12.5" /><line x1="9" y1="20" x2="0" y2="11.5" /></svg>');
+									opacity: 0;
+									z-index: 1;
+								}
+							}
+	
+							&:hover {
+								cursor: pointer;
+								font-weight: 600;
+								background-color: _palette(border-bg);
+							}
+	
+							&:active {
+								background-color: _palette(border-bg-alt);
+							}
+						}
+					}
+				}
+	
+				&.use-middle {
+					&:after {
+						content: '';
+						display: block;
+						position: absolute;
+						top: 0;
+						left: calc(50% - #{_size(border-width) * 1});
+						width: _size(border-width);
+						height: 100%;
+						background: _palette(border);
+					}
+	
+					ul {
+						li {
+							&.is-middle {
+								border-left: 0;
+							}
+						}
+					}
+				}
+			}
+
+		}
+		
+		
 		@include breakpoint(small) {
 			article {
+				
 				@include padding(2rem, 2rem, (1.5rem, 0, 0.5rem, 0));
 				.close {
 					&:before {
@@ -108,10 +255,4 @@
 				@include padding(2rem, 1.5rem, (1rem, 0, 0.5rem, 0));
 			}
 		}
-	}
-
-	.poem, h2.major.poem {
-		text-align: center;
-		margin: 0 auto;
-		width: 90%;
 	}

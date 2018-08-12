@@ -5,3 +5,8 @@ public
 .intermediate-representation/
 .cache/
 yarn.lock
+functions/
+firebase.json
+database.rules.json
+.firebaserc
+src/firebase/firebase.js

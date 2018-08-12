@@ -4,9 +4,10 @@
   "version": "1.0.0",
   "author": "Xeiko",
   "dependencies": {
+    "firebase": "^5.3.1",
     "gatsby": "^1.9.235",
-    "gatsby-link": "^1.6.39",
     "gatsby-image": "^1.0.42",
+    "gatsby-link": "^1.6.39",
     "gatsby-plugin-google-analytics": "^1.0.24",
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-sass": "^1.0.23",
@@ -18,7 +19,6 @@
     "gatsby-transformer-sharp": "^1.6.22",
     "lodash": "^4.17.4"
   },
- 
   "license": "MIT",
   "main": "n/a",
   "repository": {
@@ -27,7 +27,7 @@
   },
   "scripts": {
     "start": "serve public/",
-    "now": "now --public",
+    "now": "firebase deploy --only functions && now --public",
     "dev": "gatsby develop",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",

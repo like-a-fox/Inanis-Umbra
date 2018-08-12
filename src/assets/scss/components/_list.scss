@@ -44,6 +44,9 @@
 			cursor: default;
 			list-style: none;
 			padding-left: 0;
+			display: flex;
+			line-height: 2.765rem;
+			justify-content: flex-end;
 
 			li {
 				display: inline-block;
@@ -54,13 +57,19 @@
 				}
 
 				a {
+					&.icon {
+						color: _palette(fg-bold);
+						line-height: 2.765rem;
+						font-size: 150%;
+					}
+					background-color: transparentize(_palette(bg), 0.25);
 					border-radius: 100%;
 					box-shadow: inset 0 0 0 _size(border-width) _palette(border);
 					display: inline-block;
-					height: 2.25rem;
-					line-height: 2.25rem;
+					height: 2.765rem;
+					line-height: 2.765rem;
 					text-align: center;
-					width: 2.25rem;
+					width: 2.765rem;
 
 					&:hover {
 						background-color: _palette(border-bg);
@@ -196,3 +205,130 @@
 			margin-left: _size(element-margin);
 		}
 	}
+
+	
+#contact {
+	ul {
+		&.mixed-row {
+			display: flex;
+			padding: 1rem 0;
+			margin: 0;
+			ul {
+				&.actions {
+					width: 50%;
+					margin: 0;
+					li {
+						width: 50%;
+
+						input {
+							width: 100%;
+						}
+					}
+				}
+				&.icons {
+					width: 50%;
+					margin: 0;
+				}
+			}
+			li {
+				line-height: 2.765rem;
+			}
+		}
+		&.actions {
+			&.top {
+				margin: 0;
+				height: 4.6rem;
+
+				h2 {
+					margin: 0!important;
+				}
+			}
+			li {
+				&.teaser {
+					position: absolute;
+					right: 2.5rem;
+				}
+				&.sent {
+					display: none;
+
+					&.has-sent {
+						display: inline-block;
+						position: absolute;
+						line-height: 2.65rem;
+						text-transform: capitalize;
+						letter-spacing: .05rem;
+						right: 2.5rem;
+						color: rgba(165, 118, 118, 0.856);
+
+						strong {
+							text-transform: uppercase;
+							text-decoration:underline;
+							text-decoration-style: dotted;
+							letter-spacing: .12em;
+							color: rgba(216, 167, 167, 0.856);
+						}
+					}
+				}
+			}
+			
+		}
+		@include breakpoint(small) {
+			&.actions {
+				&.top {
+					display: flex;
+					flex-flow: column;
+					margin-bottom: 1.5rem;
+					li {
+						
+
+						&.has-sent {
+							position: relative;
+							right: unset;
+						}
+					}
+				}
+			}
+			&.mixed-row {
+				flex-flow: column;
+				ul {
+					
+					&.actions {
+						width: 100%;
+						display: flex;
+						flex-flow: row;
+						justify-content: space-between;
+						li {
+							padding: (_size(element-margin) * 0.5) 0 0 0;
+							display: block;
+							text-align: center;
+							width: 47%;
+
+							input {
+								width: 100%;
+							}
+						}
+					}
+					&.icons {
+						width: 100%;
+						padding-top: 1.5rem;
+						justify-content: space-evenly;
+					}
+				}
+			}
+		}
+		@include breakpoint(xsmall) {
+			&.mixed-row {
+				ul {
+					&.actions {
+						flex-flow: column;
+						li {
+							width: 100%;
+	
+						}
+					}
+				}
+			}
+		}
+	}
+	
+}
