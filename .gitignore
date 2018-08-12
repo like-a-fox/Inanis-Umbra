@@ -9,4 +9,5 @@ functions/
 firebase.json
 database.rules.json
 .firebaserc
-src/firebase/firebase.js
+
+src/firebase.js

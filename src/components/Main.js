@@ -5,7 +5,7 @@ import pic01 from '../images/pic03.jpg'
 import pic02 from '../images/pic06.jpg'
 import pic03 from '../images/InanisUmbraIconBase.png'
 
-import { addTaskToFirebase } from '../firebase/firebase'
+import { addTaskToFirebase } from '../firebase'
 
 const updateByPropertyName = (propertyName, value) => () => ({
     [propertyName]: value,
@@ -63,7 +63,7 @@ constructor() {
       <div id="main" style={this.props.timeout ? {display: 'flex'} : {display: 'none'}}>
 
         <article id="intro" className={`${this.props.article === 'intro' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
-          <h2 className="major">The Gist</h2>
+          <h2 className="major">Gist</h2>
           <span className="image main"><img src={pic01} alt="Duality" /></span>
           <p>In this maddening fall through the deteriorating psyche of Derek Musser, we find a world of tortue, vengence and freedom. The character is a stupid college student with an explosive tendency to overuse drugs. He is certainly what one can define as a burn out. This time he takes it too far and finds himself in the terrifying world of Inanis Umbra and is subjected to unfathomable amounts of pain.</p>
           <p>This gripping story somehow leaves the reader in nead of a nightligh while also laughing at the writer's overall sarcastic tone in regards to his own past. It is clear his view point of his past self is nothing but a joke and that definitely creates more than enough comic relief.</p>
@@ -80,7 +80,7 @@ constructor() {
         </article>
 
         <article id="work" className={`${this.props.article === 'work' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
-          <h2 className="major poem">THE NETHER</h2>
+          <h2 className="major poem">NETHER</h2>
           <span className="image main"><img src={pic02} alt="" /></span>
   <div className="poem">        
 <p>
@@ -144,7 +144,7 @@ Stares back from my reflection. Because I ensured my fate.
 
         <article id="contact" className={`${this.props.article === 'contact' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <ul className="actions top">
-            <li> <h2 className="major">Contact</h2></li>
+            <li> <h2 className="major contact">Contact</h2></li>
           <li className={`sent ${hasSent ? 'has-sent' : ''}`}>
                            Your <strong>stupid</strong> message has been sent!
                             </li>
@@ -173,7 +173,8 @@ Stares back from my reflection. Because I ensured my fate.
                             <input 
                             type="text" 
                             name="name" 
-                            id="name" 
+                id="name" 
+                autoComplete="on"
                             required 
                             value={name} onChange={event => this.setState(updateByPropertyName('name', event.target.value))}/>
                         </div>
@@ -182,7 +183,8 @@ Stares back from my reflection. Because I ensured my fate.
                             <input 
                             type="text" 
                             name="email" 
-                            id="email" 
+                id="email" 
+                autoComplete="on"
                             required 
                             value={email} onChange={event => this.setState(updateByPropertyName('email', event.target.value))}/>
                         </div>

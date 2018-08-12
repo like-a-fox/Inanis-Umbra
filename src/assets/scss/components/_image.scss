@@ -65,7 +65,7 @@
 		&.main {
 			display: block;
 			margin: 0 auto (_size(element-margin) * 1) auto;
-			width: 57%;
+			max-width: 70%;
 			border-radius: 50%;
 			float: right;
 			overflow: hidden;
@@ -73,21 +73,22 @@
 			border: solid .3rem transparentize(_palette(border), 0.25);
 
 			img {
-				opacity: .9;
+				opacity: .7;
 				width: 100%;
+				background-color: transparentize(_palette(bg), 0.25);
 				@include vendor('filter', 'grayscale(30%)');
 			}
 		}
 
 		@include breakpoint(small) {
 			&.main {
-				margin: (_size(element-margin) * 1) auto;
+				margin: 0 auto (_size(element-margin) * 1) auto;
 			}
 		}
 
 		@include breakpoint(xsmall) {
 			&.main {
-				margin: (_size(element-margin) * 0.75) auto;
+				margin:0 auto (_size(element-margin) * 0.75) auto;
 			}
 		}
 	}

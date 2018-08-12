@@ -65,13 +65,16 @@
 	}
 
 	label {
-		color: _palette(fg-bold);
+		color: _palette(fg-alt);
 		font-weight: 600;
-		display: block;
+		padding: .5% 1.2% calc(.5% - .17rem) 1.2%;
+		box-sizing: border-box;
+		background-color: transparentize(_palette(bg-alt), 0.35);
+		border-bottom: solid .17rem _palette(fg-alt);
 		font-size: 100%;
 		letter-spacing: _font(letter-spacing);
 		line-height: 1.5;
-		margin: 0 0 (_size(element-margin) * 0.5) 0;
+		margin-bottom: .2rem;
 		text-transform: uppercase;
 	}
 
@@ -90,12 +93,12 @@
 		background: transparentize(_palette(bg), 0.35);
 		border-radius: _size(border-radius);
 		border: solid _size(border-width) _palette(border);
-		color: inherit;
 		font-size: 105%;
 		color: _palette(fg-bold);
 		letter-spacing: .05rem;
 		display: block;
 		outline: 0;
+		margin: .5rem 0 0 0;
 		padding: 0 1rem;
 		text-decoration: none;
 		width: 100%;
@@ -105,6 +108,7 @@
 		}
 
 		&:focus {
+			color: _palette(fg);
 			background: _palette(border-bg);
 			border-color: _palette(fg-bold);
 			box-shadow: 0 0 0 _size(border-width) _palette(fg-bold);

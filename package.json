@@ -27,7 +27,7 @@
   },
   "scripts": {
     "start": "serve public/",
-    "now": "firebase deploy --only functions && now --public",
+    "now": "now --public",
     "dev": "gatsby develop",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -14,13 +14,12 @@
 		@include vendor('appearance', 'none');
 		@include vendor('transition', 'background-color #{_duration(transition)} ease-in-out, color #{_duration(transition)} ease-in-out');
 		background-color: transparentize(_palette(bg), 0.35);
-		border-radius: _size(border-radius);
 		border: 0;
-		box-shadow: inset 0 0 0 _size(border-width) _palette(border);
+		box-shadow: inset 0 0 0 _size(border-width) _palette(fg-dark);
 		color: _palette(fg-bold) !important;
 		cursor: pointer;
 		display: inline-block;
-		font-size: 0.8rem;
+		font-size: 90%;
 		font-weight: _font(weight);
 		height: _size(element-height);
 		letter-spacing: _font(letter-spacing);
@@ -43,7 +42,7 @@
 		}
 
 		&:hover {
-			background-color: _palette(border-bg);
+			@include vendor('filter', 'invert(100%)');
 		}
 
 		&:active {
@@ -63,8 +62,8 @@
 		}
 
 		&.special {
-			background-color: _palette(fg-bold);
-			color: transparentize(_palette(bg), 0.15) !important;
+			background-color: transparentize(_palette(bg-alt), .35);
+			color: transparentize(_palette(fg-alt), 0.15) !important;
 			font-weight: _font(weight-bold);
 
 			&:hover {

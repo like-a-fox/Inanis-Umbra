@@ -31,11 +31,11 @@
 				content: '';
 				display: block;
 				position: absolute;
-				top: calc(-3.5rem - 1px);
+				top: calc(-3.5rem - .15rem);
 				left: calc(50% - #{_size(border-width) * 1});
-				width: _size(border-width);
+				width: .1rem;
 				height: calc(3.5rem + 1px);
-				background: _palette(border);
+				background: _palette(bg-dark);
 			}
 		}
 
@@ -46,12 +46,15 @@
 				display: none;
 			}
 		}
+		h1 {
+			color: rgba(53, 53, 53, 0.8);
+		}
 
 		.logo {
 			width: 5.5rem;
 			height: 5.5rem;
 			line-height: 5.5rem;
-			border: solid _size(border-width) _palette(border);
+			border: solid .15rem _palette(bg-dark);
 			border-radius: 100%;
 			background: url('../../images/InanisUmbraLogo.png');
 			background-position: center;
@@ -64,9 +67,9 @@
 		.content {
 			background-color: transparentize(_palette(bg), 0.4);
 			border-style: solid;
-			border-color: _palette(border);
-			border-top-width: _size(border-width);
-			border-bottom-width: _size(border-width);
+			border-color: _palette(bg-dark);
+			border-top-width: .15rem;
+			border-bottom-width: .15rem;
 			max-width: 100%;
 
 			.inner {
@@ -90,29 +93,30 @@
 				letter-spacing: _font(letter-spacing);
 				font-size: 0.8rem;
 				line-height: 2;
+				color: rgba(53, 53, 53, 0.8);
 			}
 		}
 
 		nav {
-			background-color: transparentize(_palette(bg), 0.35);
-			border-radius: _size(border-radius);
 			ul {
 				@include vendor('display', 'flex');
 				margin-bottom: 0;
 				list-style: none;
+				border: solid .1rem _palette(bg-dark);
 				padding-left: 0;
-				border: solid _size(border-width) _palette(border);
-				border-radius: _size(border-radius);
+
 
 				li {
 					padding-left: 0;
-					border-left: solid _size(border-width) _palette(border);
-
+					border-left: none;
+					border-left: solid .1rem _palette(bg-dark);
+					
 					&:first-child {
-						border-left: 0;
+						border-left:0;
 					}
 
 					a {
+						color: rgba(0,0,0,0.8);
 						display: block;
 						font-weight: 600;
 						min-width: 8.5rem;
@@ -123,9 +127,10 @@
 						letter-spacing: _font(letter-spacing);
 						font-size: 0.8rem;
 						border-bottom: 0;
+						background-color: transparentize(_palette(bg), 0.4);
 
 						&:hover {
-							background-color: _palette(border-bg);
+							@include vendor('filter', 'invert(100%)');
 							font-weight: 800;
 							letter-spacing: .3em;
 						}

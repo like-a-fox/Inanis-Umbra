@@ -29,7 +29,7 @@
 			position: relative;
 			width: 40rem;
 			max-width: 100%;
-			background-color: transparentize(_palette(bg), 0.75);
+			background-color: transparentize(_palette(fg-light), 0.5);
 			border-radius: _size(border-radius);
 			opacity: 0;
 
@@ -51,15 +51,22 @@
 				display: block !important;
 			}
 			h2 {
+				line-height: 2.5rem;
 				background-color: transparentize(_palette(bg), 0.25);
 				padding: .25rem .5rem;
 				border-bottom: solid 4px _palette(border);
 				float: left;
+				max-width: 30%;
+
+				&.contact {
+					max-width: unset;
+				}
 			}
 			p {
 				background-color: transparentize(_palette(bg), 0.25);
 				padding: 1rem;
 				clear: both;
+				color: _palette(bg-alt);
 				border-bottom: solid .2rem transparentize(_palette(border), .1);
 			}
 
@@ -68,8 +75,8 @@
 				position: absolute;
 				top: 0;
 				right: 0;
-				width: 4rem;
-				height: 4rem;
+				width: 2.5rem;
+				height: 2.5rem;
 				cursor: pointer;
 				text-indent: 4rem;
 				overflow: hidden;
@@ -80,33 +87,34 @@
 					content: '';
 					display: block;
 					position: absolute;
-					top: 0.75rem;
-					left: 0.75rem;
+					top: 0;
+					left: 0;
 					width: 2.5rem;
 					height: 2.5rem;
-					border-radius: 100%;
 					background-position: center;
-					background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" zoomAndPan="disable"><style>line { stroke: #{_palette(border)}; stroke-width: 1; }</style><line x1="2" y1="2" x2="18" y2="18" /><line x1="18" y1="2" x2="2" y2="18" /></svg>');
+					background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" zoomAndPan="disable"><style>line { stroke: #{_palette(fg-dark)}; stroke-width: 1; }</style><line x1="2" y1="2" x2="18" y2="18" /><line x1="18" y1="2" x2="2" y2="18" /></svg>');
 					background-size: 20px 20px;
 					background-repeat: no-repeat;
+					background-color: transparentize(_palette(bg-dark),.9);
 				}
 
 				&:hover {
 					&:before {
-						background-color: _palette(border-bg);
+						background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" zoomAndPan="disable"><style>line { stroke: #{_palette(fg-bold)}; stroke-width: 1; }</style><line x1="2" y1="2" x2="18" y2="18" /><line x1="18" y1="2" x2="2" y2="18" /></svg>');
+						background-color: _palette(bg-dark);
 					}
 				}
 
 				&:active {
 					&:before {
-						background-color: _palette(border-bg-alt);
+						background-color: _palette(bg-dark);
 					}
 				}
 			}
 
 			nav {
 				margin: 1rem 0;
-				background-color: transparentize(_palette(bg), 0.25);
+			
 				border-radius: _size(border-radius);
 
 				ul {
@@ -118,15 +126,17 @@
 					list-style: none;
 					padding-left: 0;
 					border: solid _size(border-width) _palette(border);
-					border-radius: _size(border-radius);
 	
 					li {
 						float:left;
 						padding:0;
 						padding-left: 0;
+						background-color: transparentize(_palette(bg), 0.25);
 						border-left: solid _size(border-width) _palette(border);
 						width: 100%;
-						
+						&:hover {
+							@include vendor('filter', 'invert(100%)');
+						}
 						&:first-child {
 							border-left: 0;
 						}
@@ -140,11 +150,11 @@
 							padding: 0 1.25rem 0 (1.25rem + _font(letter-spacing));
 							text-transform: uppercase;
 							letter-spacing: _font(letter-spacing);
-							font-size: 0.8rem;
+							font-size: 90%;
 							border-bottom: 0;
+							color: _palette(bg-alt);
 
 							&.next {
-								padding-right: 4.5em;
 								position: relative;
 								&:before,
 								&:after {
@@ -170,8 +180,8 @@
 								}
 							}
 							&.back {
-								padding-left: 4.5em;
 								position: relative;
+								
 								&:before,
 								&:after {
 									@include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');
@@ -199,7 +209,7 @@
 							&:hover {
 								cursor: pointer;
 								font-weight: 600;
-								background-color: _palette(border-bg);
+								
 							}
 	
 							&:active {
@@ -236,8 +246,10 @@
 		
 		@include breakpoint(small) {
 			article {
-				
-				@include padding(2rem, 2rem, (1.5rem, 0, 0.5rem, 0));
+				p {
+					padding: .5rem;
+				}
+				padding:1.5rem;
 				.close {
 					&:before {
 						top: 0.875rem;
@@ -252,7 +264,22 @@
 
 		@include breakpoint(xsmall) {
 			article {
-				@include padding(2rem, 1.5rem, (1rem, 0, 0.5rem, 0));
+				nav {
+					ul {
+						flex-flow: column;
+						border: none;
+						li {
+							border: solid _size(border-width) _palette(border);
+							&:last-child {
+								margin-top: .4rem;
+							}
+						}
+					}
+				}
+				p {
+					padding: .1rem;
+					letter-spacing: -1px;
+				}
 			}
 		}
 	}
