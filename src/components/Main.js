@@ -65,8 +65,10 @@ constructor() {
         <article id="intro" className={`${this.props.article === 'intro' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Gist</h2>
           <span className="image main"><img src={pic01} alt="Duality" /></span>
-          <p>In this maddening fall through the deteriorating psyche of Derek Musser, we find a world of tortue, vengence and freedom. The character is a stupid college student with an explosive tendency to overuse drugs. He is certainly what one can define as a burn out. This time he takes it too far and finds himself in the terrifying world of Inanis Umbra and is subjected to unfathomable amounts of pain.</p>
-          <p>This gripping story somehow leaves the reader in nead of a nightligh while also laughing at the writer's overall sarcastic tone in regards to his own past. It is clear his view point of his past self is nothing but a joke and that definitely creates more than enough comic relief.</p>
+          <p>In this maddening fall through the deteriorating psyche of Derek Musser, we find a world of torture, vengeance and freedom. The character is a stupid college student with an explosive tendency to overuse drugs. He is certainly what one can define as a burn out. This time he takes it too far and finds himself in the terrifying world of Inanis Umbra and is subjected to unfathomable amounts of pain.</p>
+          <p>This gripping story somehow leaves the reader in need of a nightlight, while also laughing at the writer's overall sarcastic tone in regards to his own past. It is clear his view point of his past self is nothing but a joke and that definitely creates more than enough comic relief.</p>
+
+
           <nav>
             <ul className="actions">
               <li>
@@ -124,7 +126,16 @@ Stares back from my reflection. Because I ensured my fate.
         <article id="about" className={`${this.props.article === 'about' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Teaser</h2>
           <span className="image main"><img src={pic03} alt="" /></span>
-          <p>That's when I started to lose control. The knots in the ceiling beams began to twist their way toward me, forming into miniature tornados. I gasped as I felt the wind. Nothing so real had ever been procured from a drug induced hallucination. I still remember feeling them. Like they were stretching me out to meet them. Then as if to save me, a lone bird ripped its way off the design on Alyssia's comforter and began flying towards me. It was beautiful. Its majestic feathers were colored with a blue that had never been. It seemed so small, and yet with the beating of its wings it felt so strong. I felt saved, maybe even vindicated for some reason. <br />Without warning the comforter decided to open its jowls. A disgusting red tongue flapped behind its jagged teeth as it snapped for the bird. Who knew a bed could have a mouth, let alone crave a bird that had flown from its very comforter? I winced as I heard the bones shatter. The bed had caught the bird. Blood sprayed over the room. I felt it. I mean I really did feel it. I could taste the iron as the red liquid washed my face. Tears flooded from my eyes, as I mourned something I deeply loved, despite having no understanding as to why. In that moment I had become lost.</p>
+          <p>We sprawled out on her carpet floor. My back was leaned on the wall which felt far more comfortable then it should have. I stared at the ceiling in some attempt to ignore the sounds of intimacy several feet to my left. And that's when shit started go far, far out of my control. The knots that blended throughout the wood ceiling beams began to twist its way toward me, forming into miniature tornados. I gasped as I felt the wind. Nothing so real had ever been procured as a result of drugs. I can still feel them. They were stretching me towards them with an overwhelming desperation. These disregarded remnants of what had once grown so tall felt angry and vengeful. </p>
+          <p>
+          My savior; a lone bird embroidered into the fabric of Alyssia's comforter, ripped its way into magnificent existence. As it beat its wings and soared closer I knew my eyes would never witness a more beautiful cynosure in this existence. Its feathers radiated energy that felt like liberation and compassion. They were colored with a blue that wove its way through their aura and the fabric of life around it. It seemed so small, and yet with the gust of its flight it felt so strong. I felt saved, maybe even vindicated for some reason. 
+          </p>
+          <p>
+          Without warning the comforter decided to open its jowls. A disgusting red tongue flapped behind its jagged teeth as it snapped for the bird. Who knew a bed could have a mouth, let alone crave a bird that had flown from its very comforter? I winced as I heard the bones shatter. The bed had caught the bird. Blood sprayed over the room. I felt it. I mean I really did feel it. I could taste the iron as the red liquid washed my face. Tears flooded from my eyes, as I lost a love greater than I had ever known. 
+          </p>
+          <p>
+          I should have save it. <strong>How</strong> could I let it <strong>DIE</strong>? The <strong>disgust</strong>. The <strong>shame</strong>. The <strong>hatred</strong>. In that moment it became clear what I was: <strong>NOTHING</strong>. Just a sad hollow <strong>EMPTY</strong> thing, incapable of anything but destruction. 
+          </p>
           <nav>
           <ul className="actions">
               <li>
